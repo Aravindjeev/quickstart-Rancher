@@ -9,7 +9,7 @@ variable "aws_secret_key" {
 }
 
 variable "prefix" {
-  default     = "Falcon"
+  default     = "Harness"
   description = "Cluster Prefix - All resources created by Terraform have this prefix prepended to them"
 }
 
