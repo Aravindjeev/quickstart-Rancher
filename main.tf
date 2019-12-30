@@ -1,3 +1,10 @@
+# Configure the Amazon AWS Provider
+provider "aws" {
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
+  region     = var.region
+}
+
 variable "aws_access_key" {
   default     = "xxx"
   description = "Amazon AWS Access Key"
@@ -9,7 +16,7 @@ variable "aws_secret_key" {
 }
 
 variable "prefix" {
-  default     = "Harness"
+  default     = "harness"
   description = "Cluster Prefix - All resources created by Terraform have this prefix prepended to them"
 }
 
@@ -71,12 +78,6 @@ variable "docker_version_agent" {
 variable "ssh_key_name" {
   default     = ""
   description = "Amazon AWS Key Pair Name"
-}
-# Configure the Amazon AWS Provider
-provider "aws" {
-  access_key = var.aws_access_key
-  secret_key = var.aws_secret_key
-  region     = var.region
 }
 
 data "aws_ami" "ubuntu" {
